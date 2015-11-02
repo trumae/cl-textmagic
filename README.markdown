@@ -1,8 +1,6 @@
 # Cl-Textmagic
 
-## Usage
-
-## Installation
+Common lisp implementation of TextMagic API to send SMS 
 
 ## Author
 
