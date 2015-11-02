@@ -15,7 +15,7 @@
 (defsystem cl-textmagic
   :version "0.1"
   :author "Trumae da Ilha"
-  :license ""
+  :license "MIT"
   :depends-on (:dexador
 	       :cl-json
 	       )

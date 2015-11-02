@@ -10,7 +10,7 @@
 
 (defsystem cl-textmagic-test
   :author "Trumae da Ilha"
-  :license ""
+  :license "MIT"
   :depends-on (:cl-textmagic
                :prove)
   :components ((:module "t"
