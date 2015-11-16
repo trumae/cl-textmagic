@@ -19,7 +19,10 @@
   (json:decode-json-from-string 
    (dex:get (format nil 
 		    "https://www.textmagic.com/app/api?username=~A&password=~A&cmd=send&text=~A&phone=~A&unicode=0" 
-		    username password (quri:url-encode text) phone))))
+		    (quri:url-encode username)
+		    (quri:url-encode password)
+		    (quri:url-encode text)
+		    (quri:url-encode phone)))))
 
 
 (defun account (username password)
@@ -27,21 +30,26 @@
   (json:decode-json-from-string 
    (dex:get (format nil 
 		    "https://www.textmagic.com/app/api?username=~A&password=~A&cmd=account" 
-		    username password))))
+		    (quri:url-encode username)
+		    (quri:url-encode password)))))
 
 (defun message_status (username password ids)
 "This command allows you to retrieve the delivery status of any SMS you have already sent."
   (json:decode-json-from-string 
    (dex:get (format nil 
 		    "https://www.textmagic.com/app/api?username=~A&password=~A&cmd=message_status&ids=~A" 
-		    username password ids))))
+		    (quri:url-encode username)
+		    (quri:url-encode password)
+		    ids))))
 
 (defun receive (username password id)
   "This command retrieves the incoming SMS messages from the server. You can request any SMS sent to one of our SMS reply numbers by using this API."
   (json:decode-json-from-string 
    (dex:get (format nil 
 		    "https://www.textmagic.com/app/api?username=~A&password=~A&cmd=receive&last_retrieved_id=~A" 
-		    username password id))))
+		    (quri:url-encode username)
+		    (quri:url-encode password)
+		    id))))
 
 
 (defun delete_reply(username password ids)
@@ -49,7 +57,9 @@
   (json:decode-json-from-string 
    (dex:get (format nil 
 		    "https://www.textmagic.com/app/api?username=~A&password=~A&cmd=delete_reply&ids=~A" 
-		    username password ids))))
+		    (quri:url-encode username)
+		    (quri:url-encode password)
+		    ids))))
 
 
 (defun check_number(username password phone)
@@ -58,9 +68,9 @@
   (json:decode-json-from-string 
    (dex:get (format nil 
 		    "https://www.textmagic.com/app/api?username=~A&password=~A&cmd=check_number&phone=~A" 
-		    username password phone))))
-
-
+		    (quri:url-encode username)
+		    (quri:url-encode password)
+		    phone))))
 
 
 
