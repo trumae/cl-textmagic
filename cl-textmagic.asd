@@ -22,7 +22,7 @@
   :components ((:module "src"
                 :components
                 ((:file "cl-textmagic"))))
-  :description ""
+  :description "Common lisp implementation of TextMagic API to send SMS"
   :long-description
   #.(with-open-file (stream (merge-pathnames
                              #p"README.markdown"
